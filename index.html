@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚗 Nathi Car Driving Game</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="game-container">
+  <!-- Traffic Light -->
+  <div class="panel">
+    <h5><i class="fas fa-traffic-light"></i> Traffic Light</h3>
+    <div class="traffic-light">
+      <div id="red" class="light red"></div>
+      <div id="yellow" class="light yellow"></div>
+      <div id="green" class="light green"></div>
+    </div>
+    <div class="status" id="lightStatus">Go</div>
+    <div id="trafficNote">Go!</div>
+  </div>
+
+  <!-- Road -->
+ <div class="road" id="road">
+  <div class="lane-mark"></div>
+  <div class="lane-mark" style="animation-delay:0.5s"></div>
+  <!-- Car (rotated to face upward) -->
+  <div class="car" id="car">
+     <img src="swift.png" alt="Car" width="250" height="150">
+  </div>
+</div>
+
+  <!-- Car Panel -->
+  <div class="panel">
+    <h5><i class="fas fa-car"></i> Transmission</h3>
+    <div class="controls">
+      <button onclick="car.setState(new ParkState())"><i class="fas fa-square"></i> P</button>
+      <button onclick="car.setState(new ReverseState())"><i class="fas fa-arrow-down"></i> R</button>
+      <button onclick="car.setState(new NeutralState())"><i class="fas fa-minus"></i> N</button>
+<button onclick="car.setState(new DriveState(1))">1</button>
+<button onclick="car.setState(new DriveState(2))">2</button>
+<button onclick="car.setState(new DriveState(3))">3</button>
+<button onclick="car.setState(new DriveState(4))">4</button>
+<button onclick="car.setState(new DriveState(5))">5</button>
+    </div>
+
+    <div class="status" id="carStatus"></div>
+    <div class="speedometer">
+      <i class="fas fa-tachometer-alt"></i> <span id="speedValue">0</span> km/h
+    </div>
+      <!-- Steering Buttons -->
+    <div class="steering-buttons">
+      <button id="leftBtn"><i class="fas fa-arrow-left"></i> Left</button>
+      <button id="rightBtn"><i class="fas fa-arrow-right"></i> Right</button>
+    </div>
+
+    <p><i class="fas fa-gamepad"></i> Use ⬅️ ➡️ to steer</p>
+  </div>
+</div>
+
+<script  src="script.js"></script>
+</body>
+</html>
